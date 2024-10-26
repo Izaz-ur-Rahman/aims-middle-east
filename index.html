@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>AIMS in Action</title>
+    <meta name="description" content="Free bootstrap template Atlas" />
+    <link rel="icon" href="img/favicon.png" sizes="32x32" type="image/png" />
+    <!-- custom.css -->
+    <link rel="stylesheet" href="css/custom.css" />
+    <!-- bootstrap.min.css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="css/aos.css" />
+
+    <style>
+      html,
+      body {
+        overflow-x: hidden; /* Disable horizontal scrolling */
+        width: 100%; /* Ensure elements respect the page width */
+        margin: 0; /* Reset margins */
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      #banner {
+        background-size: cover; /* Ensure the background image covers the entire section */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Prevent the background from repeating */
+        height: 100vh; /* Set height to 100% of the viewport */
+        display: flex; /* Enable flexbox for centering content */
+        align-items: center; /* Vertically center content */
+        justify-content: center; /* Horizontally center content */
+      }
+      /* General CSS for all logos */
+      .logo-container img {
+        max-width: 100%; /* Prevents logos from overflowing their containers */
+        height: auto; /* Keeps the aspect ratio */
+        display: block; /* Centers image inside container */
+        margin: 0 auto; /* Centers image horizontally */
+      }
+
+      /* Ensures logos are properly spaced and aligned */
+      .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      /* Adjust padding and scaling for smaller screens */
+      @media (max-width: 768px) {
+        .logo-container img {
+          width: 80%; /* Scales down logos on tablets and smaller screens */
+        }
+      }
+
+      @media (max-width: 480px) {
+        .logo-container img {
+          width: 60%; /* Further scales down logos on mobile */
+        }
+      }
+
+      .highlight-section {
+        background-color: white;
+        color: #fff;
+        padding: 80px 0;
+        text-align: center;
+      }
+      .highlight-section h2 {
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: black;
+      }
+      .highlight-section h3 {
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: black;
+      }
+      .highlight-section p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto 30px;
+        color: black;
+      }
+      .highlight-section .btn-light {
+        padding: 10px 30px;
+        font-size: 1rem;
+      }
+      .cards-section {
+        padding: 60px 0;
+      }
+      .cards-section .card {
+        border: none;
+        transition: 0.3s ease;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      }
+      .cards-section .card:hover {
+        transform: translateY(-5px);
+      }
+      .cards-section img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+      .cards-section h5 {
+        margin-top: 15px;
+        font-weight: 600;
+      }
+
+      .icon-size {
+        width: 70px; /* Adjust the size */
+        height: 70px; /* Ensure proportional height */
+        display: block;
+      }
+
+      .card-body {
+        align-items: flex-start; /* Ensures content aligns from the top */
+      }
+      .custom-button {
+        background-color: white; /* Initial background color */
+        color: black; /* Initial text color */
+        transition: background-color 0.3s, color 0.3s; /* Smooth transition effect */
+      }
+
+      .custom-button:hover {
+        background-color: white; /* Keep background white on hover */
+        color: black; /* Change text color to black on hover */
+      }
+
+      .icon-container {
+        background-color: white;
+        color: black;
+        font-size: 20px;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
+      }
+
+      #contact ul li {
+        display: flex;
+        align-items: center;
+      }
+
+      #contact ul span {
+        color: white;
+        font-size: 16px;
+      }
+
+      #social-media a i {
+        font-size: 24px;
+        color: white;
+      }
+    /* Header Styling */
+    header {
+        background-color: transparent;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top:-100px;
+        margin-left:-10px;
+        padding: 15px 20px;
+
+    }
+
+    /* Logo Styling */
+
+    .header-logo img {
+      position: relative;
+        max-width: 650px;
+        top: 10%;
+        height: 70px;
+    }
+
+    /* Desktop Navigation Menu */
+    nav {
+        display: flex;
+        gap: 20px;
+
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        transition: color 0.3s ease;
+        margin-top:10px;
+    }
+
+    nav a:hover {
+        color: lightgreen;
+        text-decoration: none;
+
+    }
+
+    /* Hamburger Menu Button */
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+        z-index: 300;
+        width: 30px;
+        height: 30px;
+    }
+
+    .hamburger span {
+        width: 35px;
+        height: 5px;
+        background-color: white;
+        transition: 0.3s;
+
+
+        /* border: 2px solid blue; */
+    }
+
+    /* Rotate animation for the hamburger when active */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 8px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -10px);
+    }
+
+    /* Mobile Menu Styling */
+  .mobile-nav {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #444;
+  position: absolute;
+  top: -3%;
+  right: -400px;
+  width: 100vw;
+  height: 50%;
+  padding: 20px;
+  z-index: 100;
+  border: 2px solid rgb(32, 44, 34);
+
+}
+
+    .mobile-nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    /* Show Hamburger for Smaller Screens */
+    @media (max-width: 768px) {
+        nav {
+            display: none; /* Hide desktop menu on mobile */
+        }
+        .mobile-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #444;
+  position: absolute;
+  top: -3%;
+  right: -400px;
+  width: 100vw;
+  height: 50%;
+  padding: 20px;
+  z-index: 100;
+  border: 2px solid rgb(32, 44, 34);
+
+}
+        .header-logo > img{
+          width: 300px;
+           height: 70px;
+        }
+
+        .hamburger {
+            display: flex;
+        }
+
+        header {
+            margin-top: 10px;
+        }
+
+    }
+
+    /* Show Mobile Menu when Open */
+    .mobile-nav.show {
+      transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #444;
+  position: absolute;
+  top: -3%;
+  right: 0;
+  width: 100vw;
+  height: 50%;
+  padding: 20px;
+  z-index: 100;
+  border: 2px solid rgb(32, 44, 34);
+  transition:  all 0.5s ease-in-out;
+
+    }
+ /* Base Button Styling */
+.contact-btn {
+    background: linear-gradient(135deg, #E7F7FF, #E7F7FF);
+    color: black;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: -10px;
+    transition: background 0.4s ease, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    max-width: 300px; /* Constrain width on larger screens */
+    width: 100%; /* Full width on small screens */
+  }
+
+  /* Hover Effect */
+  .contact-btn:hover {
+    background: linear-gradient(135deg, #A0D8FF, #6EC5FF);
+    transform: scale(1.1);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    color: #fffdd0;
+  }
+
+  /* Active/Focused State */
+  .contact-btn:active {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Center the Button Inside its Container */
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  /* Media Queries for Responsive Adjustments */
+
+  /* Small Screens (Up to 600px) */
+  @media (max-width: 600px) {
+    .contact-btn {
+      padding: 10px 15px;
+      font-size: 16px;
+    }
+  }
+
+  /* Tablets (600px - 768px) */
+  @media (max-width: 768px) {
+    .contact-btn {
+      padding: 10px 14px;
+      font-size: 14px;
+      width:40%;
+
+    }
+    .header-logo img {
+        position: absolute;
+        /* max-width: 650px; */
+          margin-top: -15%;
+          height: 70px;
+          max-width:100%;
+      }
+    .logo_res{
+       max-width:100% !important;
+       position:absolute;
+       height:10px;
+        }
+
+
+  }
+
+  /* Larger Screens (Above 768px) */
+  @media (min-width: 768px) {
+    .contact-btn {
+      max-width: 200px;
+      margin-top: 0; /* Adjust margin for desktop view */
+    }
+  }
+.logo_res{
+max-width:40% !important;
+}
+
+    </style>
+
+  </head>
+
+  <body>
+    <!-- Hero Banner (Introduction) -->
+    <div
+      class="jumbotron jumbotron-fluid"
+      id="banner"
+      style="position: relative;
+      background-image: url('img/Hero-Image.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+    ">
+      <div class="container text-center text-md-left">
+        <header style=" z-index: 1; ">
+          <!-- Logo Section -->
+          <div class="header-logo" style="width: 40%;">
+            <a href="https://sugarhospital.com/">
+              <img class ="logo_res"
+                style=""
+                src="img/Aims_Middle East logo White.png"
+                alt="logo">
+            </a>
+          </div>
+
+
+          <!-- Desktop Navigation Menu -->
+          <nav style="">
+            <a href="#vision">Vision</a>
+            <a href="#mission">Mission</a>
+            <a href="#objective">Objective</a>
+
+            <!-- Contact Us Button -->
+            <button onclick="contactUs()" class="btn btn-white contact-btn"
+              style='border-radius:20px;'>
+              Contact Us
+            </button>
+          </nav>
+
+          <!-- Hamburger Menu for Mobile -->
+          <div class="hamburger" style="" id="hamburger"
+            onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <!-- Mobile Navigation Menu -->
+          <div class="mobile-nav" id="mobileMenu"
+            style>
+            <a href="#vision" onclick="toggleMobileMenu()">Vision</a>
+            <a href="#mission" onclick="toggleMobileMenu()">Mission</a>
+            <a href="#objective" onclick="toggleMobileMenu()">Objective</a>
+
+            <!-- Contact Us Button -->
+            <button onclick="toggleMobileMenu(); contactUs()"
+              class="contact-btn">
+              Contact Us
+            </button>
+          </div>
+
+        </header>
+
+        <h1 data-aos="fade" class="display-3 text-white font-weight-bold my-3"
+          style="margin-top:90px !important;">
+          Welcome to AIMS Middle East<br /> Strength in Care
+        </h1>
+        <p data-aos="fade-up" class="lead text-white mb-4">
+          Just as the mighty Abaseen river brings life across Pakistan, AIMS
+          strives to <br />
+          navigate healthcare challenges, ensuring no one is left behind.
+        </p>
+      </div>
+    </div>
+    <section class="highlight-section py-5"
+      style="background: linear-gradient(135deg, #f0f8ff, #e6f7ff)">
+      <div class="container">
+        <div class="row">
+          <!-- First Card -->
+          <div class="col-md-6 mb-4" data-aos="fade-up">
+            <div class="card border-0 shadow h-100 p-4"
+              style="border-radius: 12px">
+              <div class="card-body text-start">
+                <!-- Use text-start for left alignment -->
+                <img
+                  src="img/Flowing-Care.png"
+                  alt="Care Icon"
+                  class="icon-size" <!-- Removed mx-auto -->
+                style="float: left; margin-right: 15px;"
+                <!-- Optional: Add margin for spacing -->
+                />
+                <h3 class="font-weight-bold mb-3" style="text-align:left">
+                  Flowing Care to Those in Need
+                </h3>
+                <p class="text-muted" style="text-align:left">
+                  With each patient we care for, every donation we receive, and
+                  every professional we train, we carry the flow of care to
+                  those who need it most. Like a river, we remain steady and
+                  unwavering, ensuring that people affected by diabetes,
+                  hypertension, and non-communicable diseases are never left
+                  behind.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Second Card -->
+          <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card border-0 shadow h-100 p-4"
+              style="border-radius: 12px">
+              <div class="card-body text-start">
+                <!-- Use text-start for left alignment -->
+                <img
+                  src="img/Building-a-future.png"
+                  alt="Future Icon"
+                  class="icon-size" <!-- Removed mx-auto -->
+                style="float: left; margin-right: 15px;"
+                <!-- Optional: Add margin for spacing -->
+                />
+                <h3 class="font-weight-bold mb-3" style="text-align:left">
+                  Building a Future of Accessible Care
+                </h3>
+                <p class="text-muted" style="text-align:left">
+                  Our goal is to lead in providing comprehensive,
+                  quality-assured, and affordable healthcare. We envision a
+                  future where access to care is a right, not a privilege—where
+                  no one, regardless of circumstance, is left without the
+                  support they need.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- feature (skew background) -->
+    <div class="jumbotron jumbotron-fluid feature" id="feature-first ">
+      <div class="container my-5" id="vision">
+        <div class="row justify-content-between text-center text-md-left">
+          <div
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            data-aos-once="true"
+            class="col-md-6">
+            <h2 class="font-weight-bold">Our Vision</h2>
+            <p class="my-4 " style="font-size:1.2rem">
+              Leading the way in delivering comprehensive, quality-assured, and
+              affordable diabetes healthcare. We aim to become a beacon of hope
+              for those unable to access care.
+            </p>
+          </div>
+          <div
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            data-aos-once="true"
+            class="col-md-6 align-self-center">
+            <img
+              src="img/Vision.png"
+              alt="Take a look inside"
+              class="mx-auto d-block" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- feature (green background) -->
+    <div class="jumbotron jumbotron-fluid feature" id="feature-last ">
+      <div class="container" id="mission">
+        <div class="row justify-content-between text-center text-md-left">
+          <div
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            data-aos-once="true"
+            class="col-md-6 flex-md-last">
+            <h2 class="font-weight-bold">Our Mission</h2>
+            <p class="my-4" style="font-size:1.2rem">
+              Pooling resources from the public and private sectors, AIMS
+              strives to make a tangible difference in healthcare for diabetes
+              and NCDs across KP and Pakistan. By working together, we aim to
+              enhance access to care for those who need it most.
+            </p>
+          </div>
+          <div
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            data-aos-once="true"
+            class="col-md-6 align-self-center flex-md-first">
+            <img
+              src="img/Mission.png"
+              alt="Safe and reliable"
+              class="mx-auto d-block" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- three-blcok -->
+    <div class="container my-5 py-2" id="objective">
+      <h2 class="text-center font-weight-bold my-5">
+        Objectives That Guide Us
+      </h2>
+      <div class="row">
+        <div
+          data-aos="fade-up"
+          data-aos-delay="0"
+          data-aos-duration="1000"
+          data-aos-once="true"
+          class="col-md-4 text-center">
+          <img src="img/Patient-centered-treatment.png" alt="Anti-spam"
+            class="mx-auto" />
+          <h4>Patient-Centered Treatment</h4>
+          <p>
+            We offer high-quality medical treatment for those who cannot afford
+            care, helping individuals manage diabetes and NCDs.
+          </p>
+        </div>
+        <div
+          data-aos="fade-up"
+          data-aos-delay="200"
+          data-aos-duration="1000"
+          data-aos-once="true"
+          class="col-md-4 text-center">
+          <img
+            src="img/Professional-Development.png"
+            alt="Phishing Detect"
+            class="mx-auto" />
+          <h4>Professional Development</h4>
+          <p>
+            We integrate medical research, education, and training to support
+            healthcare professionals in their efforts to combat these diseases.
+          </p>
+        </div>
+        <div
+          data-aos="fade-up"
+          data-aos-delay="400"
+          data-aos-duration="1000"
+          data-aos-once="true"
+          class="col-md-4 text-center">
+          <img src="img/Community-Awareness.png" alt="Smart Scan"
+            class="mx-auto" />
+          <h4>Community Awareness</h4>
+          <p>
+            Through advocacy campaigns, we promote health awareness, disease
+            prevention, and early intervention strategies for diabetes and NCDs.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- AIMS in Action Section -->
+    <section class="aims-in-action bg-light py-5">
+      <div class="container">
+        <h2 class="font-weight-bold text-center">AIMS in Action</h2>
+        <p class="text-center">
+          Our strength lies in the trust of our donors, the dedication of our
+          healthcare professionals, and the resilience of our patients.
+          Together, we are building a healthier, more supportive future for
+          Pakistan’s communities affected by diabetes and NCDs.
+        </p>
+        <p class="text-center">
+          Join us in this journey to create a lasting impact—because every
+          contribution, whether skills, time, or monetary, helps sustain the
+          flow of care.
+        </p>
+        <h2 class="text-center mt-5 font-weight-bold">Get Involved</h2>
+        <p class="text-center">
+          Help us extend our reach. Your support enables AIMS to provide vital
+          healthcare services to underprivileged communities. Whether you’re
+          looking to donate, volunteer, or partner with us, your involvement can
+          change lives. Together, we can navigate the challenges ahead and
+          ensure care for all.
+        </p>
+      </div>
+    </section>
+    <!-- client -->
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-sm-4 col-md-2 py-2 text-center logo-container">
+            <a
+              href="https://dubaihumanitarian.ae/member/aims-middle-east/"
+              target="_blank"
+              rel="noopener noreferrer">
+              <img
+                src="img/aims_logo_b.png"
+                class="img-fluid"
+                alt="AIMS Logo" />
+            </a>
+          </div>
+          <div class="col-sm-4 col-md-2 py-2 text-center logo-container">
+            <a
+              href="https://sugarhospital.com/"
+              target="_blank"
+              rel="noopener noreferrer">
+              <img
+                src="img/sugar_logo_h.png"
+                class="img-fluid"
+                alt="Sugar Logo" />
+            </a>
+          </div>
+          <div class="col-sm-4 col-md-2 py-2 text-center logo-container">
+            <a
+              href="https://dubaihumanitarian.ae/member/aims-middle-east/"
+              target="_blank"
+              rel="noopener noreferrer">
+              <img src="img/DXBH_logo.png" class="img-fluid" alt="DXBH Logo" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Contact -->
+    <div class="jumbotron jumbotron-fluid" id="contact"
+      style="
+    background-image: url(img/Footerr.png);
+    background-size: cover;
+    object-fit: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  ">
+      <div class="container my-5">
+        <div class="row justify-content-between">
+          <div class="col-md-6 text-white">
+            <h2 class="font-weight-bold">Contact Us</h2>
+            <p class="my-4">
+              Join AIMS Middle East in our mission to deliver <br> essential
+              healthcare services to underprivileged <br> communities. Your
+              support makes a difference.
+            </p>
+            <ul class="list-unstyled">
+              <li class="d-flex align-items-center my-2">
+                <div class="icon-container">
+                  <i class="fa fa-envelope"></i>
+                </div>
+                <span class="ml-2">hziah@hotmail.com</span>
+              </li>
+              <li class="d-flex align-items-center my-2">
+                <div class="icon-container">
+                  <i class="fa fa-phone"></i>
+                </div>
+                <span class="ml-2">+971 50 950 2616</span>
+              </li>
+              <li class="d-flex align-items-center my-2">
+                <div class="icon-container">
+                  <i class="fa fa-map-marker"></i>
+                </div>
+                <span class="ml-2">
+                  AIMS Pakistan, A-6 B/3, Opposite Edhi <br> Homes, Phase 5,
+                  Hayatabad, Peshawar, Pakistan
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-6">
+            <form id="contactForm">
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="name">Your Name</label>
+                  <input type="text" class="form-control" id="name" required />
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="email">Your Email</label>
+                  <input type="email" class="form-control" id="email"
+                    required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea class="form-control" id="message" rows="3"
+                  required></textarea>
+              </div>
+              <button type="submit"
+                class="btn font-weight-bold atlas-cta atlas-cta-wide cta-green my-3 custom-button">
+                Submit
+              </button>
+              <div id="successMessage" class="alert alert-success mt-3"
+                style="display: none;">
+                Your request has been sent successfully!
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="jumbotron jumbotron-fluid" id="copyright">
+        <div class="container">
+          <div class="row justify-content-between">
+            <div
+              class="col-md-6 text-white align-self-center text-center text-md-left my-2">
+              Copyright © 2024 AIMS Middle East. All rights reserved.
+            </div>
+            <div
+              class="col-md-6 align-self-center text-center text-md-right my-2"
+              id="social-media">
+              <a href="https://web.facebook.com/DubaiHumanitarian/?_rdc=1&_rdr"
+                class="d-inline-block text-center ml-2">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="https://www.instagram.com/dubaihumanitarian/"
+              class="d-inline-block text-center ml-2" target="_blank" rel="noopener noreferrer">
+               <i class="fa fa-instagram" aria-hidden="true" style=""></i>
+           </a>
+
+           <a href="https://www.youtube.com/channel/UCsE6mKtqj7FGOM1N36DR0LQ"
+           class="d-inline-block text-center ml-2" target="_blank" rel="noopener noreferrer">
+            <i class="fa fa-youtube-play" aria-hidden="true" style=""></i>
+        </a>
+
+              <a href="https://www.linkedin.com/company/dubai-humanitarian/"
+                class="d-inline-block text-center ml-2">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById('mobileMenu');
+      const hamburger = document.getElementById('hamburger');
+
+      mobileMenu.classList.toggle('show');
+      hamburger.classList.toggle('active');
+    }
+  </script>
+
+    <script>
+
+// JavaScript to handle form submission
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+  e.preventDefault(); // Prevent form from refreshing the page
+
+  // Show the success message
+  const successMessage = document.getElementById('successMessage');
+  successMessage.style.display = 'block';
+
+  // Optionally, reset the form fields
+  e.target.reset();
+
+  // Hide the message after a few seconds (optional)
+  setTimeout(() => {
+    successMessage.style.display = 'none';
+  }, 5000); // 5 seconds
+});
+ //  JavaScript for Mobile Menu Toggle -->
+
+
+</script>
+    <!-- JavaScript for Mobile Menu Toggle -->
+
+    <!-- AOS -->
+    <script src="js/aos.js"></script>
+    <script>
+      AOS.init({});
+    </script>
+  </body>
+</html>
